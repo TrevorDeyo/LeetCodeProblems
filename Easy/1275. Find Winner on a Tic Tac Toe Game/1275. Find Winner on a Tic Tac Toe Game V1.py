@@ -77,5 +77,7 @@ class Solution:
 
 # Test cases
 solution = Solution()
-print(solution.tictactoe([[1,1],[2,0],[0,2],[0,1],[0,0],[2,2],[2,1],[1,2]]))
-print("Expected Pending")
+print(solution.tictactoe([[0,0],[2,0],[1,1],[2,1],[2,2]]))                          # A
+print(solution.tictactoe([[0,0],[1,1],[0,1],[0,2],[1,0],[2,0]]))                    # B
+print(solution.tictactoe([[0,0],[1,1],[2,0],[1,0],[1,2],[2,1],[0,1],[0,2],[2,2]]))  # Draw
+print(solution.tictactoe([[1,1],[2,0],[0,2],[0,1],[0,0],[2,2],[2,1],[1,2]]))        # Expected Pending
