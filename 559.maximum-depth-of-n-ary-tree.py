@@ -15,6 +15,11 @@ class Node:
 
 class Solution:
     def maxDepth(self, root: 'Node') -> int:
+        print(root.val)
+        for child in root.children:
+            print("-", child.val)
+        
+        return 0
         
 # @lc code=end
 
