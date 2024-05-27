@@ -3,26 +3,15 @@ from typing import List
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
 
-        missingNums = []
-
-        for num in range(len(arr) + k):
-            if num not in arr and num != 0:
-                missingNums.append(num)
-
-
-        if len(missingNums) < k:
-            if len(missingNums) <= 1:
-                return arr[-1] + k
-
-            add = k - len(missingNums)
-            if arr[-1] > missingNums[-1]:
-                last = arr[-1]
+        left, right = 0, len(arr)
+        while left < right:
+            mid = (left + right) // 2
+            if arr[mid] - 1 - mid < k:
+                left = mid + 1
             else:
-                last = missingNums[-1]
-            
-            return last + add
+                right = mid
+        return left + k
 
-        return missingNums[k-1]
 
 solution = Solution()
 
