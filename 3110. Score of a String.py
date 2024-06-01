@@ -1,13 +1,9 @@
 class Solution:
     def scoreOfString(self, s: str) -> int:
-        counter = 0
         score = 0
-        ascii_values = []
-        for char in s:
-            ascii_values.append(ord(char))
-            if counter > 0:
-                score += abs(ascii_values[counter] - ascii_values[counter - 1])
-            counter += 1
+
+        for i in range(len(s) - 1):
+            score += abs(ord(s[i]) - ord(s[i + 1]))
 
         return score
 
